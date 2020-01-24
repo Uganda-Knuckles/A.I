@@ -2,6 +2,7 @@
 from chatterbot.trainers import ListTrainer
 from chatterbot import ChatBot
 import speech_recognition as sr
+import os
 
 r = sr.Recognizer()
 
@@ -9,10 +10,12 @@ bot = Chatbot('A.I')
 
 bot.set_trainer(ListTrainer)
 
-for _file is os.listdir('chat'):
+for _file in os.listdir('chat'):
   lines = open('chat+/' + _file, 'r').readlines()
-    bot.train(lines)
+
+bot.train(lines)
   
+
 with sr.Microphone() as s:
   r.adjust_for_ambient_noise(s)
   
