@@ -9,8 +9,10 @@ bot = Chatbot('A.I')
 
 bot.set_trainer(ListTrainer)
 
-for _file is os.listdir(
-
+for _file is os.listdir('chat'):
+  lines = open('chat+/' + _file, 'r').readlines()
+    bot.train(lines)
+  
 with sr.Microphone() as s:
   r.adjust_for_ambient_noise(s)
   
