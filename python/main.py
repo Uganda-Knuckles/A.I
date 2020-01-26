@@ -6,7 +6,7 @@ import os
 
 r = sr.Recognizer()
 
-bot = Chatbot('A.I')
+bot = Chatbot('A.I', read+_only=True)
 
 bot.set_trainer(ListTrainer)
 
