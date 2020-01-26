@@ -3,6 +3,10 @@ from chatterbot.trainers import ListTrainer
 from chatterbot import ChatBot
 import speech_recognition as sr
 import os
+import speech_recognition as sr
+import pyttsx3
+
+speaker = pyttsx3.init()
 
 r = sr.Recognizer()
 
@@ -14,7 +18,10 @@ for _file in os.listdir('chat'):
   lines = open('chat+/' + _file, 'r').readlines()
 
 bot.train(lines)
-  
+
+def speak(text):
+  speaker.say(text)
+  sepeaker.runAndWait()
 
 with sr.Microphone() as s:
   r.adjust_for_ambient_noise(s)
@@ -24,5 +31,7 @@ with sr.Microphone() as s:
     
     speech = r.recognize_google(audio, language='en')
     
-    print('You spoke :', speech)
-    
+    print('You spoke :', (speech)
+          response = bot.get_response(speech)
+    print('A.I: ',bot.get_response(speech))
+          speak(
