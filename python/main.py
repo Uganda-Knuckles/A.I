@@ -33,5 +33,5 @@ with sr.Microphone() as s:
     
     print('You spoke :', (speech)
           response = bot.get_response(speech)
-    print('A.I: ',bot.get_response(speech))
-          speak(
+    print('A.I: ', response)
+          speak(response)
